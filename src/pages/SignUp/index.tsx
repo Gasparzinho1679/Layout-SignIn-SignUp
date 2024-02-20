@@ -4,9 +4,10 @@ import 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
 import Icon from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import InputRegister from "../../components/InputRegister";
+import { AppNavigatorRoutesProps } from "../../routes/auth.routes";
 
 const SignUp: React.FC = () =>{
-    const navigation = useNavigation();
+    const navigation = useNavigation<AppNavigatorRoutesProps>();
 
     return(
         <SafeAreaView style={{flex:1}}>
@@ -41,7 +42,7 @@ const SignUp: React.FC = () =>{
 
                 <View style={styles.footer}>
                     <Text style={{fontWeight: "300"}}>Você já possui uma conta ? </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("login")}>
                         <Text style={{color: "#81C2FF"}}>Faça login!</Text>
                     </TouchableOpacity>
                 </View>

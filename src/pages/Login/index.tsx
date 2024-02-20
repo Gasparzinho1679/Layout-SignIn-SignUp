@@ -5,8 +5,11 @@ import Icon from "react-native-vector-icons/AntDesign";
 import Input from "../../components/Input";
 import { useNavigation } from "@react-navigation/native";
 
+// Biel importamos aqui o tipo que acabamos de exportar dentro de auth Routes
+import { AppNavigatorRoutesProps } from "../../routes/auth.routes";
+
 const Login: React.FC = () =>{
-    const navigation = useNavigation();
+    const navigation = useNavigation<AppNavigatorRoutesProps>();
 
     return(
         <SafeAreaView style={{flex:1}}>
@@ -41,7 +44,8 @@ const Login: React.FC = () =>{
 
                 <View style={styles.footer}>
                     <Text style={{fontWeight: "300"}}>Você já possui uma conta ? </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+                    {/* Biel coloquei as rotas todas com letras minúsculas para facilitar a legibilidade. */}
+                    <TouchableOpacity onPress={() => navigation.navigate("signup")}>
                         <Text style={{color: "#81C2FF"}}>Criar uma conta!</Text>
                     </TouchableOpacity>
                 </View>
